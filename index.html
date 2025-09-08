@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Krishan Pratap Singh • AI Engineer & Prompt Specialist</title>
+  <meta name="description" content="Portfolio website of Krishan Pratap Singh — AI Engineer, Prompt Specialist, and Web Designer. GST software expert, IT ops, and automation enthusiast."/>
+  <meta name="theme-color" content="#111827" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b1220;          /* deep navy */
+      --card:#111827;        /* slate */
+      --ink:#e5e7eb;         /* text */
+      --muted:#9ca3af;       /* muted text */
+      --brand:#7c3aed;       /* violet */
+      --accent:#22d3ee;      /* cyan */
+      --ring:#a78bfa;        /* focus ring */
+      --success:#10b981;
+      --rose:#ff5e9c;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(124,58,237,.20), transparent),
+                                 radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.18), transparent),
+                                 var(--bg);
+               color:var(--ink);font-family:Lato, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;scroll-behavior:smooth}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    h1,h2,h3{font-family:Montserrat, Lato, sans-serif;margin:0 0 .5rem}
+    h1{font-size:clamp(32px,4vw,56px);letter-spacing:.5px}
+    h2{font-size:clamp(24px,2.5vw,32px)}
+    p{line-height:1.7;color:var(--ink)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header.nav{position:sticky;top:0;z-index:40;background:rgba(11,18,32,.6);backdrop-filter: blur(10px);border-bottom:1px solid rgba(231,229,255,.06)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-family:Montserrat}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(45deg,var(--brand),var(--accent))}
+    .links a{margin:0 10px;color:var(--ink);opacity:.9}
+    .links a:hover{opacity:1;color:#fff}
+    .cta{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#051018;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:56px 24px}
+    .tag{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.3);color:#e9d5ff;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .headline{margin-top:12px}
+    .sub{color:var(--muted);max-width:60ch}
+
+    .avatar-wrap{justify-self:center;position:relative}
+    .avatar{width:min(280px,46vw);aspect-ratio:1/1;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,.06);box-shadow:0 10px 40px rgba(124,58,237,.35)}
+    .ring{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 90deg,var(--brand),var(--accent),var(--brand));filter:blur(14px);opacity:.45;z-index:-1}
+
+    /* Sections */
+    section{padding:48px 24px;border-top:1px solid rgba(231,229,255,.06)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+    .left{grid-column:span 5}
+    .right{grid-column:span 7}
+    .card{background:var(--card);border:1px solid rgba(231,229,255,.06);border-radius:20px;padding:20px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03)}
+
+    .timeline{display:flex;flex-direction:column;gap:16px}
+    .item{padding:16px;border-radius:16px;border:1px solid rgba(231,229,255,.06);background:rgba(255,255,255,.02)}
+    .item h3{font-size:18px}
+    .item small{color:var(--muted)}
+    ul{padding-left:18px;margin:10px 0}
+    li{margin:6px 0}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+    /* Footer */
+    footer{padding:40px 24px;border-top:1px solid rgba(231,229,255,.06);color:var(--muted);text-align:center}
+
+    /* Rose petals */
+    .petal{position:fixed;top:-40px;left:0;width:12px;height:16px;background:radial-gradient(60% 70% at 50% 40%, #ff8fb3, #ff4d88);border-radius:20px 20px 20px 0;opacity:.9;transform:rotate(0deg);pointer-events:none;z-index:10;filter:drop-shadow(0 6px 6px rgba(255,77,136,.35))}
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); opacity:.95; }
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;gap:18px}
+      .left,.right{grid-column:span 12}
+      .avatar{width:220px}
+      .grid{grid-template-columns:repeat(6,1fr)}
+      .left{grid-column:span 6}
+      .right{grid-column:span 6}
+      .split{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="dot"></span> <span>KRISHAN PRATAP SINGH</span></div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <span class="tag">Sr.Technical Support Engineer • Kanpur • Designer</span>
+        <h1 class="headline">Resume or portfolio</h1>
+        <p class="sub">AI-driven Technical Support Specialist with 5+ years across GST software, IT operations, and automation. Expert at prompting on Ai, client training, and crafting modern web experiences.
+        </p>
+        <div class="chips" style="margin-top:14px">
+          <span class="chip">Kanpur, Uttar Pradesh</span>
+          <span class="chip">📞 +91-7376252118</span>
+          <span class="chip">📧 krishhav333@gmail.com</span>
+          <a class="chip" href="https://www.yourwebsite.com" target="_blank" rel="noreferrer">🔗 www.yourwebsite.com</a>
+          <a class="chip" href="#contact">LinkedIn</a>
+        </div>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="cta" href="#experience">See Experience</a>
+          <a class="cta" href="Krishan-Pratap-Singh-Resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+
+      <div class="avatar-wrap">
+        <div class="ring"></div>
+        <!-- Put your image file in the same folder and keep this exact name or update the src -->
+        <img class="avatar" src="C:\Users\kpit solutions\Downloads\Untitled design (1).png" alt="Krishan Pratap Singh portrait" />
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container grid">
+        <div class="left"><h2>About</h2></div>
+        <div class="right card">
+          <p>
+            I specialize in AI-augmented support, GST domain tooling, and front-end experiences. I love turning complex ops into smooth flows—whether it's debugging GST return logic, automating customer emails with AI, or designing a crisp website with subtle motion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container grid">
+        <div class="left"><h2>Professional Experience</h2></div>
+        <div class="right timeline">
+          <div class="item">
+            <h3>Pinnacle Finserv Advisors Pvt. Ltd. — Technical Support & IT Operations</h3>
+            <small>Partner: Opticodes Technologies Pvt. Ltd. | Product: MyGSTCafe • Apr 2022 – Present</small>
+            <ul>
+              <li>Delivered technical support for MyGSTCafe (GSTR-1, 2B, 3B, CMP-08, 7, 9, 9C).</li>
+              <li>Analyzed issues with GST compliance context; escalated validated bugs to project portal.</li>
+              <li>Managed a support team; streamlined client emails with AI-assisted drafting.</li>
+              <li>Led demos & remote trainings via Teams, Zoom, Webex, and Google Meet.</li>
+              <li>Handled IT ops: Windows/Linux setup, LAN cabling, antivirus, backups, restore points, hardware inventory.</li>
+              <li>Supported renewals, pre-sales, and user onboarding.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>The Kathak Academy — Computer Operator</h3>
+            <small>Apr 2017 – Dec 2018</small>
+            <ul>
+              <li>Operated IT systems, maintained data, and supported daily office operations.</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>Police Mukhyalaya (NCRB Project, via E2E ITES Services Pvt. Ltd.) — Data Entry Operator</h3>
+            <small>Jul 2016 – Jan 2017</small>
+            <ul>
+              <li>Executed high-volume data entry with accuracy under tight timelines.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container grid">
+        <div class="left"><h2>Technical Skills</h2></div>
+        <div class="right split">
+          <div class="card">
+            <h3>Support & Platforms</h3>
+            <p>MyGSTCafe • GST filing utilities • AI-based communication • Client training</p>
+            <h3 style="margin-top:10px">Digital & Creation</h3>
+            <p>OBS Studio • Filmora • Canva • MS-Office</p>
+          </div>
+          <div class="card">
+            <h3>IT Systems</h3>
+            <p>Windows • Linux • Networking • VS Code • Antivirus • Backup & Recovery</p>
+            <h3 style="margin-top:10px">Programming & Scripting</h3>
+            <p>HTML • CSS • Java • SQL • PowerShell • CMD</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container grid">
+        <div class="left"><h2>Education & Certifications</h2></div>
+        <div class="right split">
+          <div class="card">
+            <ul>
+              <li>High School — New Public Inter College</li>
+              <li>Intermediate — Adarsh Shishu Shiksha Mandir Sr. Sec School</li>
+              <li>B.A (2015) — North Orissa University Of Agriculture & Technology</li>
+            </ul>
+          </div>
+          <div class="card">
+            <ul>
+              <li>Jetking Kanpur — JCHNE Cloud v2 (Hardware, Networking & Cloud Security)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container grid">
+        <div class="left"><h2>Interests & Contact</h2></div>
+        <div class="right card">
+          <p><strong>Interests:</strong> AI tools & automation, technical writing (Scribble Hub / Royal Road), singing, and continuous tech learning.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+            <a class="cta" href="mailto:krishhav333@gmail.com">Email Me</a>
+            <a class="cta" href="https://www.yourwebsite.com" target="_blank" rel="noreferrer">Visit Website</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Krishan Pratap Singh • AI Engineer & Prompt Specialist
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple scroll-reveal
+    const reveal = () => {
+      const els = document.querySelectorAll('.card, .item, .avatar, .headline');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.animate([
+              {opacity:0, transform:'translateY(12px)'},
+              {opacity:1, transform:'translateY(0)'}
+            ],{duration:600, easing:'ease-out', fill:'forwards'});
+            io.unobserve(e.target);
+          }
+        })
+      },{threshold:.12});
+      els.forEach(el=>io.observe(el));
+    };
+    reveal();
+
+    // Falling rose petals ✿
+    const petalCount = 24; // adjust density here
+    const vw = () => Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    function makePetal(){
+      const p = document.createElement('span');
+      p.className = 'petal';
+      const startX = Math.random()*vw();
+      const duration = 9000 + Math.random()*6000; // 9–15s
+      const delay = Math.random()*-8000; // stagger
+      p.style.left = startX + 'px';
+      p.style.animation = `fall ${duration}ms linear ${delay}ms infinite`;
+      // subtle horizontal drift
+      p.animate([
+        { transform: `translate(0,-40px) rotate(0deg)` },
+        { transform: `translate(${(Math.random()*80-40)}px, 100vh) rotate(${Math.random()*720-360}deg)` }
+      ], { duration, iterations: Infinity, easing:'linear', delay });
+      document.body.appendChild(p);
+    }
+    for(let i=0;i<petalCount;i++) makePetal();
+
+    // Accessibility: reduce motion
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(mq.matches){
+      document.querySelectorAll('.petal').forEach(p=>p.remove());
+    }
+  </script>
+</body>
+</html>
